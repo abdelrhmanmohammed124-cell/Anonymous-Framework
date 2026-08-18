@@ -1,11 +1,9 @@
 #!/bin/bash
-echo "[*] Setting up Anonymous Framework..."
-pkg update -y
-pkg install python git nmap apache2 -y
-pkg install unstable-repo -y
-pkg install dsniff -y
+pkg update && pkg upgrade -y
+pkg install python git nmap apache2 dsniff -y
+pip install requests urllib3
 cp anonymous.py /data/data/com.termux/files/usr/bin/anonymous
 chmod +x /data/data/com.termux/files/usr/bin/anonymous
 chmod +x anonymous.py
-echo "[+] Done! You can now type 'anonymous' from anywhere."
+echo "[+] Setup Complete! Type 'anonymous' to launch."
 
